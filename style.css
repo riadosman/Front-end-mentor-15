@@ -1,0 +1,206 @@
+:root {
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red: hsl(15, 100%, 70%);
+    /*work*/
+    --soft-blue: hsl(195, 74%, 62%);
+    /*play*/
+    --s-Light-red: hsl(348, 100%, 68%);
+    /*study*/
+    --Lime-green: hsl(145, 58%, 55%);
+    /*exercise*/
+    --Violet: hsl(264, 64%, 52%);
+    /*social*/
+    --Soft-orange: hsl(43, 84%, 65%);
+    /*self care*/
+    /*Natural*/
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--Very-dark-blue);
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-weight: 400;
+}
+
+main {
+    width: 860px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 200px);
+    border-radius: 5px;
+    grid-gap: 20px;
+}
+
+main div {
+    border-radius: 10px;
+}
+
+.name {
+    grid-row: 1/3;
+}
+
+.name .on {
+    padding: 10px 20px 40px;
+    background-color: var(--Blue);
+}
+
+.name .down ul {
+    padding: 20px;
+    list-style-type: none;
+}
+
+.name .down ul li {
+    margin: 10px 10px;
+    color: var(--Pale-Blue);
+    cursor: pointer;
+}
+
+.name .down ul li:hover,
+.name .down ul li.active {
+    color: white;
+}
+
+.name .on p {
+    color: var(--Pale-Blue);
+}
+
+.name .on h1 {
+    font-weight: 300;
+}
+
+.name img {
+    width: 70px;
+    margin: 20px 0;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.up {
+    text-align: right;
+    height: 80px;
+}
+
+.down {
+    position: relative;
+    z-index: 999;
+    top: -30px;
+    left: 0;
+    background-color: var(--Dark-blue);
+    padding: 15px 15px;
+    transition: 0.5s;
+}
+
+.down:not(.d-name):hover {
+    background-color: var(--Desaturated-blue);
+    cursor: pointer;
+}
+
+.down img {
+    cursor: pointer;
+}
+
+.down p:last-child {
+    font-size: 1rem;
+    color: var(--Pale-Blue);
+    padding: 5px 5px;
+}
+
+.hrs {
+    font-size: 3rem;
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.work .up {
+    background-color: var(--Light-red);
+}
+
+.play .up {
+    background-color: var(--soft-blue);
+}
+
+.study .up {
+    background-color: var(--s-Light-red);
+}
+
+.Exercise .up {
+    background-color: var(--Lime-green);
+
+}
+
+.Social .up {
+    background-color: var(--Violet);
+}
+
+.Self-Care .up {
+    background-color: var(--Soft-orange);
+}
+
+@media (max-width:375px) {
+    body {
+        width: 375px;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 860px;
+        position: absolute;
+        top: 85%;
+        left: 128%;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(2, 110px);
+        grid-gap: 5px;
+    }
+
+    .name .down ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .name .on {
+        display: flex;
+    }
+
+    .name .on h1 {
+        font-size: 20px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+    .hrs-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hrs{
+        font-size: 2rem;
+    }
+}
